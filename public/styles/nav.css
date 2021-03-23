@@ -5,6 +5,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  /* make navbar fixed when scrolling: */
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .logo {
