@@ -1,0 +1,21 @@
+.tweet-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#tweet-text {
+  background: none;
+  border: none;
+  border-bottom: #545149 solid 4px;
+}
+
+#tweet-text {
+  outline: none;
+}
+
+.tweet-btn-count {
+  border: dotted yellow 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
