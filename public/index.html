@@ -9,15 +9,14 @@
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
-
+    <link rel="stylesheet" href="/styles/tweet-show.css" type="text/css" />
 
     <!-- Font-Awesome free icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
@@ -27,6 +26,8 @@
     
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
 
   </head>
 
@@ -40,7 +41,7 @@
       </div>
     </nav>
     <!-- page header with background, image and name -->
-    <header>
+    <header id="page-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -53,7 +54,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      
+
       <!-- compose tweet section & form -->
       <section class="new-tweet mrg1-5">
         <h2>Compose Tweet</h2>
@@ -61,12 +62,29 @@
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="tweet-btn-count bungee-font">
-            <button type="submit" class="blue-btn">Tweet</button>
+            <button type="submit" class="blue-btn" id="btn">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-
+      <article>
+      <header class="tweet-show-header">
+        <div class="username-icon">
+          <i class="fas fa-user-astronaut fa-2x"></i>
+          <div class="sml-left-padding">Kate Isabelle</div>
+        </div>
+        <div class="handle">@KateIsabelle</div>
+      </header>
+      <section class="tweet-show-txt">Hello World! How you doin'?</section>
+      <footer class="tweet-show-footer">
+        <div class="small-txt">10 days ago</div>
+        <div class="tweet-react-icons">
+          <i class="fas fa-flag icon-react"></i>
+          <i class="fas fa-retweet icon-react"></i>
+          <i class="fas fa-heart icon-react"></i>
+        </div>
+      </footer>
+      </article>
     </main>
   </body>
 </html>
