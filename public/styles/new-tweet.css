@@ -14,8 +14,14 @@
 }
 
 .tweet-btn-count {
-  border: dotted yellow 5px;
+  padding-top: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.blue-btn {
+  border-radius: 10px;
+  background-color: #4056A1;
+  color: #FFF;
 }

@@ -31,16 +31,15 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    <!-- Top nav bar -->
     <nav>
       <div class="logo mrg1-5">tweeter</div>
       <div class="write-icon mrg1-5">
         <span><strong>Write</strong> a new tweet</span>
         <span class="arrow-icon"><i class="fas fa-angle-double-down"></i></span>
       </div>
-      
     </nav>
-
+    <!-- page header with background, image and name -->
     <header>
       <div>
           <img src="/images/profile-hex.png"> 
@@ -54,14 +53,15 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-
+      
+      <!-- compose tweet section & form -->
       <section class="new-tweet mrg1-5">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets" class="tweet-form">
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div class="twt-btn-count">
-            <button type="submit">Tweet</button>
+          <div class="tweet-btn-count bungee-font">
+            <button type="submit" class="blue-btn">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>

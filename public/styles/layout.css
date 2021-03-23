@@ -26,12 +26,15 @@ body {
  */
 
 main {
-  border: 1px red solid;
   width: 90%;
   margin: auto;
 }
 
 .mrg1-5 {
   margin: 1.5em
+}
+
+.bungee-font {
+  font-family: 'Bungee', cursive;
 }
 
