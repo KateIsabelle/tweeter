@@ -1,47 +1,14 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
-//example data
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   },
-//   {
-//     "user": {
-//       "name": "Kato Potato",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@KatoCodes"
-//     },
-//     "content": {
-//       "text": "Wherever you go, there you are"
-//     },
-//     "created_at": 1461116232227
-//   },
-// ]
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+$(document).ready(function (e) {
+  //load pre-existing tweets upon document-ready:
+    loadTweets();
+  
+    //when tweet form is submitted, handleSubmit function is called
+    $('#tweet-form').on('submit', handleSubmit)
+  
+  });
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 //function prevents XSS with escaping
 const escape = function(str) {
@@ -50,9 +17,7 @@ const escape = function(str) {
   return div.innerHTML;
 }
 
-//function takes in a tweet object, uses template literal
-//to create html elements with tweet object info
-//and returns html in $tweet variable
+//function takes in a tweet object, and returns html template
 const createTweetElement = function (tweetObj) {
   const $tweet = $(`
     <article>
@@ -78,21 +43,16 @@ const createTweetElement = function (tweetObj) {
   return $tweet;
 }
 
-//function loops through tweet database, 
-//creates tweet html element for each tweet object in db array,
-//and appends it to the #tweet-container
+
+//function creates html elements for each tweet object in db array, and appends it to the #tweet-container
 const renderTweets = function (tweets) {
 for (let i = tweets.length-1; i >= 0; i--) {
   const $tweet = createTweetElement(tweets[i]);
   $('#tweets-container').append($tweet);
 }
-
-  // for (const tweetN of tweets) {
-  //   const $tweet = createTweetElement(tweetN);
-  //   $('#tweets-container').append($tweet);
-  // }
 }
 
+//function to validate form before allowing post
 const formValidation = function() {
   const tweetText = $('#tweet-text').val();
   //removes any element with an error class from the documents
@@ -110,11 +70,12 @@ const formValidation = function() {
   return true;
 }
 
-//function prevents default submit, serializes tweet,
-//and sends ajax post to server
+//function prevents default submit and, if formValidation is true, 
+//serializes tweet, sends ajax post to server 
+//if post is successful, empties #tweet-container and reloads tweets
 const handleSubmit = function(event) {
   event.preventDefault();
-  //if form validation returns true, proceed with ajax request
+
   if (formValidation()) {
     const tweetTextSerialized = $(event.target).serialize();
     $.ajax({
@@ -131,7 +92,7 @@ const handleSubmit = function(event) {
 }
 
 //function makes get request with ajax to '/tweets'
-//and then calls renderTweets function passing in req as argument
+//and then renders tweets from request 
 const loadTweets = function () {
   $.ajax({
     url: "/tweets",
@@ -141,13 +102,19 @@ const loadTweets = function () {
     .catch(err => console.log(err))
 }
 
-$(document).ready(function (e) {
-//load pre-existing tweets upon document-ready:
-  loadTweets();
+//example data
+// const data = [
+//   {
+//     "user": {
+//       "name": "Kato Potato",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@KatoCodes"
+//     },
+//     "content": {
+//       "text": "Wherever you go, there you are"
+//     },
+//     "created_at": 1461116232227
+//   },
+// ]
 
-  //when tweet form is submitted, handleSubmit function is called
-  $('#tweet-form').on('submit', handleSubmit)
-
-});
-
-// <i class="fas fa-user-astronaut fa-2x"></i>
