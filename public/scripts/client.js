@@ -106,7 +106,7 @@ $(document).ready(function (e) {
     })
       .then((req, res) => {
         console.log("AJAX GET /tweets request:", req, "GET /tweets response:", res);
-        // renderTweets(res);
+         renderTweets(req);
       })
       .catch(err => console.log(err))
   }
