@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $("#btn").on('click', function() {
-    console.log("REGULAR FUNCTION:", this); //The this keyword is a reference to the button
   });
 
   $("textarea").on('input', function(e) {
@@ -21,9 +20,4 @@ $(document).ready(function() {
     }    
   });
   
-  // $("#btn").on('click', () => {
-  //   console.log("ARROW FUNCTION:", this); //The this keyword here refers to something else! -- document
-  // });
-  
-
 });
