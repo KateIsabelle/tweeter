@@ -43,6 +43,13 @@
 //   },
 // ]
 
+//function prevents XSS with escaping
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 //function takes in a tweet object, uses template literal
 //to create html elements with tweet object info
 //and returns html in $tweet variable
@@ -51,14 +58,14 @@ const createTweetElement = function (tweetObj) {
     <article>
       <header class="tweet-show-header">
         <div class="username-icon">
-          <img src=${tweetObj.user.avatars} alt="user icon">
-          <div class="sml-left-padding">${tweetObj.user.name}</div>
+          <img src=${escape(tweetObj.user.avatars)} alt="user icon">
+          <div class="sml-left-padding">${escape(tweetObj.user.name)}</div>
         </div>
-        <div class="handle">${tweetObj.user.handle}</div>
+        <div class="handle">${escape(tweetObj.user.handle)}</div>
       </header>
-      <section class="tweet-show-txt">${tweetObj.content.text}</section>
+      <section class="tweet-show-txt">${escape(tweetObj.content.text)}</section>
       <footer class="tweet-show-footer">
-        <div class="small-txt">${tweetObj.created_at}</div>
+        <div class="small-txt">${escape(tweetObj.created_at)}</div>
         <div class="tweet-react-icons">
           <i class="fas fa-flag icon-react"></i>
           <i class="fas fa-retweet icon-react"></i>
@@ -75,45 +82,70 @@ const createTweetElement = function (tweetObj) {
 //creates tweet html element for each tweet object in db array,
 //and appends it to the #tweet-container
 const renderTweets = function (tweets) {
-  for (const tweetN of tweets) {
-    const $tweet = createTweetElement(tweetN);
-    $('#tweets-container').append($tweet);
-  }
+for (let i = tweets.length-1; i >= 0; i--) {
+  const $tweet = createTweetElement(tweets[i]);
+  $('#tweets-container').append($tweet);
+}
 
+  // for (const tweetN of tweets) {
+  //   const $tweet = createTweetElement(tweetN);
+  //   $('#tweets-container').append($tweet);
+  // }
+}
+
+const formValidation = function() {
+  const tweetText = $('#tweet-text').val();
+  //removes any element with an error class from the documents
+  //so that on subsequent submissions, form will not have prior error msgs:
+  $('.error').remove();
+
+  if (!tweetText) {
+    alert('Write something!')
+    return false
+  }
+  if (tweetText.length > 140) {
+    alert('Too many characters!');
+    return false
+  }
+  return true;
 }
 
 //function prevents default submit, serializes tweet,
 //and sends ajax post to server
-const handleSubmit = function (event) {
+const handleSubmit = function(event) {
   event.preventDefault();
-  const tweetTextSerialized = $(event.target).serialize();
+  //if form validation returns true, proceed with ajax request
+  if (formValidation()) {
+    const tweetTextSerialized = $(event.target).serialize();
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: tweetTextSerialized
+    })
+    .then(res => {
+      $('#tweets-container').empty();
+      loadTweets();
+    })
+    .catch(err => console.log(err))
+  }
+}
+
+//function makes get request with ajax to '/tweets'
+//and then calls renderTweets function passing in req as argument
+const loadTweets = function () {
   $.ajax({
     url: "/tweets",
-    method: "POST",
-    data: tweetTextSerialized
+    method: "GET"
   })
-    .then(res => console.log("AJAX post result:", res))
+    .then(tweets => renderTweets(tweets))
     .catch(err => console.log(err))
 }
 
-
 $(document).ready(function (e) {
-
-  const loadTweets = function () {
-    $.ajax({
-      url: "/tweets",
-      method: "GET"
-    })
-      .then((req, res) => {
-        console.log("AJAX GET /tweets request:", req, "GET /tweets response:", res);
-         renderTweets(req);
-      })
-      .catch(err => console.log(err))
-  }
+//load pre-existing tweets upon document-ready:
   loadTweets();
 
-  // renderTweets(data)
-
+  //when tweet form is submitted, handleSubmit function is called
   $('#tweet-form').on('submit', handleSubmit)
 
 });
