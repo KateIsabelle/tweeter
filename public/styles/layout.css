@@ -39,3 +39,25 @@ main {
   font-family: 'Bungee', cursive;
 }
 
+@media only screen and (min-width: 1024px) {
+
+  .responsive {
+    display: flex;
+    margin: 120px 2em 2em;
+  }
+
+  .beside-left {
+    flex: 1;
+    margin: 20px;
+  }
+
+  .beside-right {
+    flex: 2;
+    margin: 20px;
+  }
+
+  #page-header {
+
+  }
+}
+

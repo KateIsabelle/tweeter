@@ -1,6 +1,9 @@
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 $(document).ready(function (e) {
+  //hide error on load
+    $('.error').hide();
+
   //load pre-existing tweets upon document-ready:
     loadTweets();
   
@@ -19,6 +22,8 @@ const escape = function(str) {
 
 //function takes in a tweet object, and returns html template
 const createTweetElement = function (tweetObj) {
+
+
   const $tweet = $(`
     <article>
       <header class="tweet-show-header">
@@ -43,7 +48,6 @@ const createTweetElement = function (tweetObj) {
   return $tweet;
 }
 
-
 //function creates html elements for each tweet object in db array, and appends it to the #tweet-container
 const renderTweets = function (tweets) {
 for (let i = tweets.length-1; i >= 0; i--) {
@@ -52,27 +56,42 @@ for (let i = tweets.length-1; i >= 0; i--) {
 }
 }
 
+// const errorMessage = function() {
+//   $('error').show
+// }
+
 //function to validate form before allowing post
 const formValidation = function() {
   const tweetText = $('#tweet-text').val();
-  //removes any element with an error class from the documents
-  //so that on subsequent submissions, form will not have prior error msgs:
-  $('.error').remove();
 
   if (!tweetText) {
-    alert('Write something!')
+    $('.error').slideUp()
+    $('.error').text("Write something, then press Tweet button. What's on your mind?")
+    $('.error').slideDown()
     return false
   }
+
+  if (tweetText.match(/^\s*$/)) {
+    $('.error').slideUp()
+    $('.error').text("Write a message. What's on your mind?")
+    $('.error').slideDown()
+    return false
+  }
+
   if (tweetText.length > 140) {
-    alert('Too many characters!');
+    $('.error').slideUp()
+    $('.error').text("Oops! Tweet must be 140 characters or less.")
+    $('.error').slideDown()
     return false
   }
+
+  $('.error').slideUp()
   return true;
 }
 
 //function prevents default submit and, if formValidation is true, 
 //serializes tweet, sends ajax post to server 
-//if post is successful, empties #tweet-container and reloads tweets
+//if post is successful, resets textarea value, empties #tweet-container and reloads tweets
 const handleSubmit = function(event) {
   event.preventDefault();
 
@@ -84,6 +103,7 @@ const handleSubmit = function(event) {
       data: tweetTextSerialized
     })
     .then(res => {
+      $('#tweet-text').val('');
       $('#tweets-container').empty();
       loadTweets();
     })

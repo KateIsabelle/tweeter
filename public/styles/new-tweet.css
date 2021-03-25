@@ -3,6 +3,18 @@
   flex-direction: column;
 }
 
+.error {
+  color: #f25738;
+  font-weight: 700;
+  border: #f25738 5px solid;
+  height: 100px;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+}
+
 #tweet-text {
   background: none;
   border: none;

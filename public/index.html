@@ -1,65 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweet-show.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- Font-Awesome free icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;400;700&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-show.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
-  </head>
 
-  <body>
-    <!-- Top nav bar -->
-    <nav>
-      <div class="logo mrg1-5">tweeter</div>
-      <div class="write-icon mrg1-5">
-        <span><strong>Write</strong> a new tweet</span>
-        <span class="arrow-icon"><i class="fas fa-angle-double-down"></i></span>
-      </div>
-    </nav>
-    <!-- page header with background, image and name -->
-    <header id="page-header">
+  <!-- Font-Awesome free icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+</head>
+
+<body>
+  <!-- Top nav bar -->
+  <nav>
+    <div class="logo mrg1-5">tweeter</div>
+    <div class="write-icon mrg1-5">
+      <span><strong>Write</strong> a new tweet</span>
+      <span class="arrow-icon"><i class="fas fa-angle-double-down"></i></span>
+    </div>
+  </nav>
+
+  <!-- page header with background, image and name -->
+  <div class="responsive">
+    <header id="page-header" class="beside-left">
       <div>
-          <img src="/images/profile-hex.png"> 
+        <img src="/images/profile-hex.png">
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+        <h2>Your Name</h2>
       </div>
-  </header>
-  
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
 
-      <section id="show-error"></section>
-
+    <main class="container beside-right">
       <!-- compose tweet section & form -->
       <section class="new-tweet mrg1-5">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets" class="tweet-form" id="tweet-form">
+          <label class="error">Error Message</label>
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="tweet-btn-count bungee-font">
@@ -72,5 +80,7 @@
       <section id="tweets-container"></section>
 
     </main>
-  </body>
+  </div>
+</body>
+
 </html>
