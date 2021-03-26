@@ -5,21 +5,20 @@ Tweeter is a simple, single-page Twitter clone where users can write Messages an
 Built with HTML, CSS (Flexbox and Media Queries), JS, jQuery, and AJAX for client-side rendering.
 
 ## Final Product
-!["Screenshot of Desktop UI"]()
-!["Screenshot of mobile or tablet UI"](url)
-
-
-## Getting Started
-
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+!["Screenshot of Desktop UI"](https://github.com/KateIsabelle/tweeter/blob/master/docs/tweeter-desktop-ui.png?raw=true)
+!["Screenshot of mobile or tablet UI"](https://github.com/KateIsabelle/tweeter/blob/master/docs/tweeter-tablet-ui.png?raw=true)
 
 ## Dependencies
 
 - Express
 - Node 5.10.x or above
-- Body Parser
+- Body-Parser
 - Chance
 - md5
+
+## Getting Started
+
+- Install dependencies using the `npm install` command.
+- Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+
+
