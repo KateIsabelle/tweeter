@@ -5,8 +5,8 @@ Tweeter is a simple, single-page Twitter clone where users can write Messages an
 Built with HTML, CSS (Flexbox and Media Queries), JS, jQuery, and AJAX for client-side rendering.
 
 ## Final Product
-!["Screenshot of user URLs page"](url)
-!["Screenshot of user URLs page"](url)
+!["Screenshot of Desktop UI"]()
+!["Screenshot of mobile or tablet UI"](url)
 
 
 ## Getting Started
