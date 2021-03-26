@@ -1,16 +1,16 @@
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$(document).ready(function (e) {
+$(document).ready(function(e) {
   //hide error on load
-    $('.error').hide();
+  $('.error').hide();
 
   //load pre-existing tweets upon document-ready:
-    loadTweets();
-  
-    //when tweet form is submitted, handleSubmit function is called
-    $('#tweet-form').on('submit', handleSubmit)
-  
-  });
+  loadTweets();
+
+  //when tweet form is submitted, handleSubmit function is called
+  $('#tweet-form').on('submit', handleSubmit)
+
+});
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 //function prevents XSS with escaping
@@ -26,18 +26,18 @@ const tweetDate = function(createdAt) {
   const now = new Date();
   const created = new Date(createdAt);
   const difference = now - created;
-  
+
   const daysAgo = Math.floor(difference / oneDayMs);
-  
-  const moment = daysAgo < 1 ? "Today" : 
-  (daysAgo < 2 ? `${daysAgo} day ago` :
-  `${daysAgo} days ago`)
-  
-  return moment;  
+
+  const moment = daysAgo < 1 ? "Today" :
+    (daysAgo < 2 ? `${daysAgo} day ago` :
+      `${daysAgo} days ago`)
+
+  return moment;
 }
 
 //function takes in a tweet object, and returns html template
-const createTweetElement = function (tweetObj) {
+const createTweetElement = function(tweetObj) {
   const moment = tweetDate(tweetObj.created_at);
 
   const $tweet = $(`
@@ -65,16 +65,12 @@ const createTweetElement = function (tweetObj) {
 }
 
 //function creates html elements for each tweet object in db array, and appends it to the #tweet-container
-const renderTweets = function (tweets) {
-for (let i = tweets.length-1; i >= 0; i--) {
-  const $tweet = createTweetElement(tweets[i]);
-  $('#tweets-container').append($tweet);
+const renderTweets = function(tweets) {
+  for (let i = tweets.length - 1; i >= 0; i--) {
+    const $tweet = createTweetElement(tweets[i]);
+    $('#tweets-container').append($tweet);
+  }
 }
-}
-
-// const errorMessage = function() {
-//   $('error').show
-// }
 
 //function to validate form before allowing post
 const formValidation = function() {
@@ -120,19 +116,18 @@ const handleSubmit = function(event) {
       method: "POST",
       data: tweetTextSerialized
     })
-    .then(res => {
-      $('#tweet-text').val('');
-      $('.counter').val('140')
-      $('#tweets-container').empty();
-      loadTweets();
-    })
-    .catch(err => console.log(err))
+      .then(res => {
+        $('#tweet-text').val('');
+        $('.counter').val('140')
+        $('#tweets-container').empty();
+        loadTweets();
+      })
+      .catch(err => console.log(err))
   }
 }
 
-//function makes get request with ajax to '/tweets'
-//and then renders tweets from request 
-const loadTweets = function () {
+//function makes get request with ajax to '/tweets' and then renders tweets from request 
+const loadTweets = function() {
   $.ajax({
     url: "/tweets",
     method: "GET"
@@ -141,19 +136,5 @@ const loadTweets = function () {
     .catch(err => console.log(err))
 }
 
-//example data
-// const data = [
-//   {
-//     "user": {
-//       "name": "Kato Potato",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@KatoCodes"
-//     },
-//     "content": {
-//       "text": "Wherever you go, there you are"
-//     },
-//     "created_at": 1461116232227
-//   },
-// ]
+
 

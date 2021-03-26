@@ -44,7 +44,7 @@
     <div class="logo mrg1-5">tweeter</div>
     <div class="write-icon mrg1-5">
       <span><strong>Write</strong> a new tweet</span>
-      <span class="arrow-icon"><i class="fas fa-angle-double-down"></i></span>
+      <span type="button" class="arrow-icon"><i class="fas fa-angle-double-down"></i></span>
     </div>
   </nav>
 
@@ -67,6 +67,7 @@
       <section class="new-tweet mrg1-5">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets" class="tweet-form" id="tweet-form">
+          <!-- error message pop-up-->
           <label class="error">Error Message</label>
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
