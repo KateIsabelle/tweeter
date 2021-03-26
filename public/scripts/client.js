@@ -20,9 +20,25 @@ const escape = function(str) {
   return div.innerHTML;
 }
 
+//function takes in tweets creation date in milliseconds and returns string of 'days ago'
+const tweetDate = function(createdAt) {
+  const oneDayMs = 1000 * 60 * 60 * 24; //86400000ms
+  const now = new Date();
+  const created = new Date(createdAt);
+  const difference = now - created;
+  
+  const daysAgo = Math.floor(difference / oneDayMs);
+  
+  const moment = daysAgo < 1 ? "Today" : 
+  (daysAgo < 2 ? `${daysAgo} day ago` :
+  `${daysAgo} days ago`)
+  
+  return moment;  
+}
+
 //function takes in a tweet object, and returns html template
 const createTweetElement = function (tweetObj) {
-
+  const moment = tweetDate(tweetObj.created_at);
 
   const $tweet = $(`
     <article>
@@ -35,7 +51,7 @@ const createTweetElement = function (tweetObj) {
       </header>
       <section class="tweet-show-txt">${escape(tweetObj.content.text)}</section>
       <footer class="tweet-show-footer">
-        <div class="small-txt">${escape(tweetObj.created_at)}</div>
+        <div class="small-txt">${escape(moment)}</div>
         <div class="tweet-react-icons">
           <i class="fas fa-flag icon-react"></i>
           <i class="fas fa-retweet icon-react"></i>
@@ -70,11 +86,13 @@ const formValidation = function() {
     $('.error').slideDown()
     return false
   }
-
+  //if tweet is only empty spaces
   if (tweetText.match(/^\s*$/)) {
     $('.error').slideUp()
     $('.error').text("Write a message. What's on your mind?")
     $('.error').slideDown()
+    $('#tweet-text').val('');
+    $('.counter').val('140')
     return false
   }
 
@@ -104,6 +122,7 @@ const handleSubmit = function(event) {
     })
     .then(res => {
       $('#tweet-text').val('');
+      $('.counter').val('140')
       $('#tweets-container').empty();
       loadTweets();
     })
