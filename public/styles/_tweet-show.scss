@@ -1,3 +1,5 @@
+@import 'global';
+
 article {
   border: 3px darkgrey solid;
   margin-bottom: 1em;
@@ -6,15 +8,16 @@ article {
 article:hover {
   box-shadow: 5px 10px #b1aae6; 
   font-weight: 400;
+    
+  &:hover .handle {
+    display: block;
+    color: #c9c4c3;
+    margin: 1em;
+  }
+
 }
 
-article:hover .handle {
-  display: block;
-  color: #c9c4c3;
-  margin: 1em;
-}
-
-.tweet-show-header {
+.tweet-header-footer {
   display: flex;
   justify-content: space-between;
   margin: 1em;
@@ -28,14 +31,8 @@ article:hover .handle {
 
 .tweet-show-txt {
   margin: 1em;
-  border-bottom: #545149 solid 3px;
+  border-bottom: $text-color solid 3px;
   padding-bottom: 1em;
-}
-
-.tweet-show-footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 1em;
 }
 
 .tweet-react-icons {
@@ -53,7 +50,7 @@ article:hover .handle {
 
 .icon-react {
   padding-left: .5em;
-  color: #4056A1;
+  color: $theme-color;
 }
 
 .sml-left-padding {

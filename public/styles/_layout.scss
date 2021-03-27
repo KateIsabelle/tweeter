@@ -1,3 +1,4 @@
+@import 'global';
 
 html {
   box-sizing: border-box;
@@ -6,15 +7,12 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff:
- */
 
 body {
-  color: #545149;
+  color: $text-color;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $main-font;
   font-weight: 300;
 }
 
@@ -27,8 +25,8 @@ main {
   margin: 1.5em
 }
 
-.bungee-font {
-  font-family: 'Bungee', cursive;
+.styled-font {
+  font-family: $styled-font;
 }
 
 @media only screen and (min-width: 1024px) {

@@ -1,6 +1,8 @@
+@import 'global';
+
 nav {
   height: 120px;
-  background-color: #4056A1;
+  background-color: $theme-color;
   color: #FFF;
   display: flex;
   justify-content: space-between;
@@ -12,7 +14,7 @@ nav {
 }
 
 .logo {
-  font-family: 'Bungee', cursive;
+  font-family: $styled-font;
   font-size: 1.5em;
 }
 
@@ -23,5 +25,5 @@ nav {
 }
 
 .arrow-icon {
-  color: Tomato;
+  color: $red;
 }

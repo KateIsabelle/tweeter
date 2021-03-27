@@ -1,12 +1,14 @@
+@import 'global';
+
 .tweet-form {
   display: flex;
   flex-direction: column;
 }
 
 .error {
-  color: #f25738;
+  color: $red;
   font-weight: 700;
-  border: #f25738 5px solid;
+  border: $red 5px solid;
   height: 75px;
   margin-bottom: 1em;
   display: flex;
@@ -18,7 +20,7 @@
 #tweet-text {
   background: none;
   border: none;
-  border-bottom: #545149 solid 4px;
+  border-bottom: $text-color solid 4px;
   outline: none;
 }
 
@@ -31,6 +33,6 @@
 
 .blue-btn {
   border-radius: 10px;
-  background-color: #4056A1;
+  background-color: $theme-color;
   color: #FFF;
 }

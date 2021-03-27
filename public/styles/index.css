@@ -1,0 +1,235 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+.mrg1-5 {
+  margin: 1.5em;
+}
+
+.styled-font {
+  font-family: "Bungee", cursive;
+}
+
+@media only screen and (min-width: 1024px) {
+  .responsive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 120px 2em 2em;
+  }
+  .beside-left {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 20px;
+  }
+  .beside-right {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    margin: 20px;
+  }
+}
+
+nav {
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  /* make navbar fixed when scrolling: */
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  font-family: "Bungee", cursive;
+  font-size: 1.5em;
+}
+
+.write-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.arrow-icon {
+  color: Tomato;
+}
+
+#page-header {
+  height: 400px;
+  background-color: #6fbda7;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* For fixed navbar: */
+  margin-top: 120px;
+}
+
+.tweet-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.error {
+  color: Tomato;
+  font-weight: 700;
+  border: Tomato 5px solid;
+  height: 75px;
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.7em;
+}
+
+#tweet-text {
+  background: none;
+  border: none;
+  border-bottom: #545149 solid 4px;
+  outline: none;
+}
+
+.tweet-btn-count {
+  padding-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blue-btn {
+  border-radius: 10px;
+  background-color: #4056A1;
+  color: #FFF;
+}
+
+article {
+  border: 3px darkgrey solid;
+  margin-bottom: 1em;
+}
+
+article:hover {
+  -webkit-box-shadow: 5px 10px #b1aae6;
+          box-shadow: 5px 10px #b1aae6;
+  font-weight: 400;
+}
+
+article:hover:hover .handle {
+  display: block;
+  color: #c9c4c3;
+  margin: 1em;
+}
+
+.tweet-header-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1em;
+}
+
+.username-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em;
+}
+
+.tweet-show-txt {
+  margin: 1em;
+  border-bottom: #545149 solid 3px;
+  padding-bottom: 1em;
+}
+
+.tweet-react-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.handle {
+  display: none;
+}
+
+.small-txt {
+  font-size: .75em;
+}
+
+.icon-react {
+  padding-left: .5em;
+  color: #4056A1;
+}
+
+.sml-left-padding {
+  padding-left: .5em;
+}
+/*# sourceMappingURL=index.css.map */

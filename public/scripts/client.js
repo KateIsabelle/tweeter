@@ -42,7 +42,7 @@ const createTweetElement = function(tweetObj) {
 
   const $tweet = $(`
     <article>
-      <header class="tweet-show-header">
+      <header class="tweet-header-footer">
         <div class="username-icon">
           <img src=${escape(tweetObj.user.avatars)} alt="user icon">
           <div class="sml-left-padding">${escape(tweetObj.user.name)}</div>
@@ -50,7 +50,7 @@ const createTweetElement = function(tweetObj) {
         <div class="handle">${escape(tweetObj.user.handle)}</div>
       </header>
       <section class="tweet-show-txt">${escape(tweetObj.content.text)}</section>
-      <footer class="tweet-show-footer">
+      <footer class="tweet-header-footer">
         <div class="small-txt">${escape(moment)}</div>
         <div class="tweet-react-icons">
           <i class="fas fa-flag icon-react"></i>
