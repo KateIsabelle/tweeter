@@ -1,0 +1,54 @@
+@import 'global';
+
+//tablet size
+@media only screen and (min-width: 1024px) {
+
+  .responsive {
+    display: flex;
+    margin: 120px 2em 2em;
+  }
+
+  .beside-left {
+    flex: 1;
+    margin: 20px;
+  }
+
+  .beside-right {
+    flex: 2;
+    margin: 20px;
+  }
+  
+}
+
+//phone size
+@media only screen and (max-width: 530px) {
+
+  body {
+    font-size: 18px;
+  }
+  
+  nav {
+    height: 90px;
+    background-color: #49a38a;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    padding: 0.2em;
+  }
+
+  #page-header {
+    margin-top: 90px;
+  }
+
+  .logo {
+    // transform: scale(0.8);
+    margin: 0.5em;
+  }
+  
+  .write-icon {
+    margin: 0.5em;
+  }
+
+  .write-prompt {
+    // font-size: 0.7em;
+  }
+
+}
