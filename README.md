@@ -13,8 +13,6 @@ Built with HTML, CSS (Flexbox and Media Queries), JS, jQuery, and AJAX for clien
 - Express
 - Node 5.10.x or above
 - Body-Parser
-- Chance
-- md5
 
 ## Getting Started
 

@@ -29,13 +29,13 @@
   
   nav {
     height: 90px;
-    background-color: #49a38a;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    background-color: $theme-color;
     padding: 0.2em;
   }
 
   #page-header {
     margin-top: 90px;
+    height: 350px;
   }
 
   .logo {
