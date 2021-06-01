@@ -44,7 +44,7 @@ const createTweetElement = function(tweetObj) {
     <article>
       <header class="tweet-header-footer">
         <div class="username-icon">
-          <img src=${escape(tweetObj.user.avatars)} alt="user icon">
+          <img src=${escape(tweetObj.user.avatars)} alt="user icon" style="border-radius:50%">
           <div class="sml-left-padding">${escape(tweetObj.user.name)}</div>
         </div>
         <div class="handle">${escape(tweetObj.user.handle)}</div>
