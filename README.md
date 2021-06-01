@@ -1,6 +1,7 @@
 <div align="center">
 
 <img src="public/images/cute-bird.png" alt="tweeter" width="150px">
+
 # Tweeter
 
 A single-page Twitter clone built with Node.js, Express, HTML, CSS, JavaScript, jQuery, AJAX. 
