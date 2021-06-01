@@ -44,7 +44,7 @@ const createTweetElement = function(tweetObj) {
     <article>
       <header class="tweet-header-footer">
         <div class="username-icon">
-          <img src=${escape(tweetObj.user.avatars)} alt="user icon" style="border-radius:50%">
+          <img src=${escape(tweetObj.user.avatars)} alt="user icon" style="border-radius:50%" class="icon-img">
           <div class="sml-left-padding">${escape(tweetObj.user.name)}</div>
         </div>
         <div class="handle">${escape(tweetObj.user.handle)}</div>
@@ -136,5 +136,14 @@ const loadTweets = function() {
     .catch(err => console.log(err))
 }
 
-
-
+//
+const $downArrowIcon = function() {
+  // console.log('$downArrowIcon function executed')
+  // $('.arrow-icon').mouseenter(function() {
+  //   console.log('inner hover happening')
+  //   $(this).toggleClass('arrow-icon-blue')
+  // })
+  // $(".write-icon").hover(function(){
+  //   $("arrow-icon").addClass('arrow-icon-slide-down')
+  // })
+}
