@@ -10,6 +10,9 @@ $(document).ready(function(e) {
   //when tweet form is submitted, handleSubmit function is called
   $('#tweet-form').on('submit', handleSubmit)
 
+  //focus on tweet text input when arrow icon clicked
+  $writeTweetFocus();
+
 });
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -137,13 +140,8 @@ const loadTweets = function() {
 }
 
 //
-const $downArrowIcon = function() {
-  // console.log('$downArrowIcon function executed')
-  // $('.arrow-icon').mouseenter(function() {
-  //   console.log('inner hover happening')
-  //   $(this).toggleClass('arrow-icon-blue')
-  // })
-  // $(".write-icon").hover(function(){
-  //   $("arrow-icon").addClass('arrow-icon-slide-down')
-  // })
+const $writeTweetFocus = function() {
+  $('.write-icon').click(function(){
+    $('#tweet-text').focus();
+});
 }
