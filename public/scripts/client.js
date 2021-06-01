@@ -12,7 +12,6 @@ $(document).ready(function(e) {
 
   //focus on tweet text input when arrow icon clicked
   $writeTweetFocus();
-
 });
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
