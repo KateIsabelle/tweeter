@@ -20,14 +20,11 @@ nav {
   font-size: 1.5em;
   margin: 1em;
 }
-
-.write-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1em;
+.arrow-icon {
+  color: $red;
 }
-//////
+
+//top arrow icon animation:
 @keyframes bounce {
 	0%, 100%, 20%, 50%, 80% {
 		-webkit-transform: translateY(0);
@@ -35,27 +32,25 @@ nav {
 		transform:         translateY(0)
 	}
 	40% {
-		-webkit-transform: translateY(-30px);
-		-ms-transform:     translateY(-30px);
-		transform:         translateY(-30px)
+		-webkit-transform: translateY(30px);
+		-ms-transform:     translateY(30px);
+		transform:         translateY(30px)
 	}
 	60% {
-		-webkit-transform: translateY(-15px);
-		-ms-transform:     translateY(-15px);
-		transform:         translateY(-15px)
+		-webkit-transform: translateY(15px);
+		-ms-transform:     translateY(15px);
+		transform:         translateY(15px)
 	}
 }
 .write-icon {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+
   position: absolute;
   top: 35%;
-  left: 50%;
-  height: 180px;
-  width: 180px;
-  // color: $red;  
-  // border-radius: 50%;
-  // line-height: 180px;
-  // text-align: center;
-  // text-transform: uppercase;
+  right: 5%;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -64,7 +59,6 @@ nav {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: 3;
-  // color: white;
 }
 .write-icon:hover {
   cursor: pointer;
@@ -72,9 +66,7 @@ nav {
   -moz-animation-name: bounce;
 }
 //////
-.arrow-icon {
-  color: $red;
-}
+
 
 
 
