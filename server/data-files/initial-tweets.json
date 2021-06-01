@@ -1,23 +1,45 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Kramer",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "handle": "@Kraaamer"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "Somewhere in this hospital, the anguished oink of Pigman cries out!"
     },
     "created_at": 1622333428553
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Kramer",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "handle": "@Kraaamer"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "Moles...freckles' ugly cousin."
+    },
+    "created_at": 1622419828553
+  },
+  {
+    "user": {
+      "name": "Kramer",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@Kraaamer"
+    },
+    "content": {
+      "text": "You know what would make a great coffee table book? A coffee table book about coffee tables! Get it?"
+    },
+    "created_at": 1622419828553
+  },
+  {
+    "user": {
+      "name": "Kramer",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@Kraaamer"
+    },
+    "content": {
+      "text": "Oh, understudies are a very shifty bunch. The substitute teachers of the theater world."
     },
     "created_at": 1622419828553
   }
