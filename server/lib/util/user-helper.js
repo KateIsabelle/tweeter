@@ -9,8 +9,8 @@ const md5 = require('md5');
 module.exports = {
   generateRandomUser: () => {
     const gender    = chance.gender();
-    const firstName = chance.first({gender: gender});
-    const lastName  = chance.last();
+    const firstName = Cosmo //chance.first({gender: gender});
+    const lastName  = Kramer //chance.last();
     const userName  = firstName + " " + lastName;
     
     let userHandle = "@";
