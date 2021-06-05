@@ -18,6 +18,9 @@ Tweet data is exchanged with a server via AJAX requests and rendered live using 
 
 ## 📷 Screen Shots
 
+
+https://user-images.githubusercontent.com/74748863/120896625-6ad37d00-c5f0-11eb-8e3e-9a140b34f926.mp4
+
 !["Screenshot of Desktop UI"](https://github.com/KateIsabelle/tweeter/blob/master/docs/tweeter-desktop-ui.png?raw=true)
 !["Screenshot of mobile or tablet UI"](https://github.com/KateIsabelle/tweeter/blob/master/docs/tweeter-tablet-ui.png?raw=true)
 
