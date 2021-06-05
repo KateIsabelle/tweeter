@@ -2,7 +2,7 @@
 
 <img src="public/images/profile-pic-circular.png" alt="Kramer from Seinfeld" width="150px" style="">
 
-# Tweeter
+# Seinfeld Tweeter
 
 A single-page Twitter clone built with Node.js, Express, HTML, CSS, JavaScript, jQuery, AJAX.
 
@@ -10,7 +10,7 @@ A single-page Twitter clone built with Node.js, Express, HTML, CSS, JavaScript, 
 
 ## 💡 About 
 
-Tweeter is a simple, single-page Twitter clone where you can post messages to the page as a random Seinfeld character. Break out your favourite Seinfeld quotes ot make up some of your own! 
+Tweeter is a simple, single-page Twitter clone where you can post messages to the page as a random **Seinfeld** character. Break out your favourite Seinfeld quotes to make up some of your own! 
 
 Tweet data is exchanged with a server via AJAX requests and rendered live using jQuery.
 
