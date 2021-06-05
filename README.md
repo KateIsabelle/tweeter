@@ -10,7 +10,7 @@ A single-page Twitter clone built with Node.js, Express, HTML, CSS, JavaScript, 
 
 ## 💡 About 
 
-Tweeter is a simple, single-page Twitter clone where you can post messages to the page as a random **Seinfeld** character. Break out your favourite Seinfeld quotes to make up some of your own! 
+Tweeter is a simple, single-page Twitter clone where you can post messages to the page as a random **Seinfeld** character. Break out your favourite Seinfeld quotes or make up some of your own! 
 
 Tweet data is exchanged with a server via AJAX requests and rendered live using jQuery.
 
