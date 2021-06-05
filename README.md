@@ -21,7 +21,7 @@ Tweet data is exchanged with a server via AJAX requests and rendered live using 
 https://user-images.githubusercontent.com/74748863/120896748-d6b5e580-c5f0-11eb-90e1-5d3d56bb8548.mp4
 
 
-https://user-images.githubusercontent.com/74748863/120896752-da496c80-c5f0-11eb-812f-eca483ef8e4e.mp4
+https://user-images.githubusercontent.com/74748863/120897178-d585b800-c5f2-11eb-8115-6ee509da8848.mp4
 
 
 https://user-images.githubusercontent.com/74748863/120896756-dddcf380-c5f0-11eb-9cf2-74176a88c6fa.mp4
